@@ -52,6 +52,8 @@ module "walls" {
 }
 
 module "inside" {
+  depends_on = [module.walls]
+
   source = "./cube"
 
   material = "air"
