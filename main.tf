@@ -34,7 +34,9 @@ module "walls" {
 }
 
 module "inside" {
-  depends_on = [module.walls]
+  depends_on = [
+    module.walls
+  ]
 
   source = "./cube"
 
@@ -54,7 +56,9 @@ module "inside" {
 }
 
 resource "minecraft_block" "furnace" {
-  depends_on = [module.inside]
+  depends_on = [
+    module.inside
+  ]
 
   material = "minecraft:furnace"
 
@@ -66,7 +70,9 @@ resource "minecraft_block" "furnace" {
 }
 
 resource "minecraft_block" "chest" {
-  depends_on = [module.inside]
+  depends_on = [
+    module.inside
+  ]
 
   material = "minecraft:chest"
 
