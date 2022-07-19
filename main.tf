@@ -53,19 +53,19 @@ provider "minecraft" {
 #   }
 # }
 
-# resource "minecraft_block" "furnace" {
-#   depends_on = [
-#     module.inside
-#   ]
+resource "minecraft_block" "furnace" {
+  # depends_on = [
+  #   module.inside
+  # ]
 
-#   material = "minecraft:furnace"
+  material = "minecraft:furnace"
 
-#   position = {
-#     x = -196
-#     y = 69
-#     z = -188
-#   }
-# }
+  position = {
+    x = -196
+    y = 69
+    z = -188
+  }
+}
 
 # resource "minecraft_block" "chest" {
 #   depends_on = [
