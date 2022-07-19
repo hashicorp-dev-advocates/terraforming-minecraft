@@ -13,23 +13,23 @@ provider "minecraft" {
 }
 
 // Module that creates a cube out of Minecraft blocks
-# module "walls" {
-#   source = "./cube"
+module "walls" {
+  source = "./cube"
 
-#   material = "stone"
+  material = "stone"
 
-#   position = {
-#     x = -198,
-#     y = 68,
-#     z = -195
-#   }
+  position = {
+    x = -198,
+    y = 68,
+    z = -195
+  }
 
-#   dimensions = {
-#     width  = 9,
-#     length = 9,
-#     height = 4
-#   }
-# }
+  dimensions = {
+    width  = 9,
+    length = 9,
+    height = 4
+  }
+}
 
 # module "inside" {
 #   depends_on = [
@@ -54,9 +54,9 @@ provider "minecraft" {
 # }
 
 resource "minecraft_block" "furnace" {
-  # depends_on = [
-  #   module.inside
-  # ]
+  depends_on = [
+    module.inside
+  ]
 
   material = "minecraft:furnace"
 
