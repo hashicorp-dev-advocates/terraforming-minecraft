@@ -13,7 +13,7 @@ provider "minecraft" {
 }
 
 resource "minecraft_block" "stone" {
-  material = "minecraft:stone"
+  material = "minecraft:cobblestone"
 
   position = {
     x = -198
