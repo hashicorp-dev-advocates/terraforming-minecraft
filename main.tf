@@ -36,7 +36,7 @@ resource "minecraft_block" "chest" {
 module "walls" {
   source = "./cube"
 
-  material = "cobblestone"
+  material = "double_stone_slab"
 
   position = {
     x = -198,
