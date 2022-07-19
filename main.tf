@@ -22,6 +22,16 @@ resource "minecraft_block" "furnace" {
   }
 }
 
+resource "minecraft_block" "chest" {
+  material = "minecraft:chest"
+
+  position = {
+    x = -195
+    y = 69
+    z = -188
+  }
+}
+
 // Module that creates a cube out of Minecraft blocks
 module "walls" {
   source = "./cube"
