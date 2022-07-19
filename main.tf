@@ -54,9 +54,9 @@ module "inside" {
 }
 
 resource "minecraft_block" "furnace" {
-  # depends_on = [
-  #   module.inside
-  # ]
+  depends_on = [
+    module.inside
+  ]
 
   material = "minecraft:furnace"
 
@@ -67,16 +67,16 @@ resource "minecraft_block" "furnace" {
   }
 }
 
-# resource "minecraft_block" "chest" {
-#   depends_on = [
-#     module.inside
-#   ]
+resource "minecraft_block" "chest" {
+  depends_on = [
+    module.inside
+  ]
 
-#   material = "minecraft:chest"
+  material = "minecraft:chest"
 
-#   position = {
-#     x = -195
-#     y = 69
-#     z = -188
-#   }
-# }
+  position = {
+    x = -195
+    y = 69
+    z = -188
+  }
+}
