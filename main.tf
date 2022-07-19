@@ -48,7 +48,7 @@ module "inside" {
 
   position = {
     x = -197,
-    y = 71,
+    y = 69,
     z = -194
   }
 
