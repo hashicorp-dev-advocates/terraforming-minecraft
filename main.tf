@@ -12,13 +12,13 @@ provider "minecraft" {
   password = "password"
 }
 
-resource "minecraft_block" "stone" {
-  material = "minecraft:cobblestone"
+resource "minecraft_block" "furnace" {
+  material = "minecraft:furnace"
 
   position = {
-    x = -198
-    y = 66
-    z = -195
+    x = -196
+    y = 69
+    z = -188
   }
 }
 
