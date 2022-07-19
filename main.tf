@@ -54,9 +54,9 @@ module "walls" {
 # }
 
 resource "minecraft_block" "furnace" {
-  depends_on = [
-    module.inside
-  ]
+  # depends_on = [
+  #   module.inside
+  # ]
 
   material = "minecraft:furnace"
 
