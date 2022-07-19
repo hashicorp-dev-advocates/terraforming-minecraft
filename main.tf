@@ -40,3 +40,21 @@ module "walls" {
     height = 4
   }
 }
+
+module "inside" {
+  source = "./cube"
+
+  material = "air"
+
+  position = {
+    x = -197,
+    y = 71,
+    z = -194
+  }
+
+  dimensions = {
+    width  = 7,
+    length = 7,
+    height = 3
+  }
+}
