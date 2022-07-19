@@ -12,31 +12,13 @@ provider "minecraft" {
   password = "password"
 }
 
-resource "minecraft_block" "furnace" {
-  material = "minecraft:furnace"
 
-  position = {
-    x = -196
-    y = 69
-    z = -188
-  }
-}
-
-resource "minecraft_block" "chest" {
-  material = "minecraft:chest"
-
-  position = {
-    x = -195
-    y = 69
-    z = -188
-  }
-}
 
 // Module that creates a cube out of Minecraft blocks
 module "walls" {
   source = "./cube"
 
-  material = "double_stone_slab"
+  material = "stone"
 
   position = {
     x = -198,
@@ -68,5 +50,29 @@ module "inside" {
     width  = 7,
     length = 7,
     height = 3
+  }
+}
+
+resource "minecraft_block" "furnace" {
+  depends_on = [module.inside]
+
+  material = "minecraft:furnace"
+
+  position = {
+    x = -196
+    y = 69
+    z = -188
+  }
+}
+
+resource "minecraft_block" "chest" {
+  depends_on = [module.inside]
+
+  material = "minecraft:chest"
+
+  position = {
+    x = -195
+    y = 69
+    z = -188
   }
 }
