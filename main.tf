@@ -31,27 +31,27 @@ module "walls" {
   }
 }
 
-# module "inside" {
-#   depends_on = [
-#     module.walls
-#   ]
+module "inside" {
+  depends_on = [
+    module.walls
+  ]
 
-#   source = "./cube"
+  source = "./cube"
 
-#   material = "air"
+  material = "air"
 
-#   position = {
-#     x = -197,
-#     y = 69,
-#     z = -194
-#   }
+  position = {
+    x = -197,
+    y = 69,
+    z = -194
+  }
 
-#   dimensions = {
-#     width  = 7,
-#     length = 7,
-#     height = 3
-#   }
-# }
+  dimensions = {
+    width  = 7,
+    length = 7,
+    height = 3
+  }
+}
 
 resource "minecraft_block" "furnace" {
   # depends_on = [
