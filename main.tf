@@ -21,3 +21,22 @@ resource "minecraft_block" "stone" {
     z = -195
   }
 }
+
+// Module that creates a cube out of Minecraft blocks
+module "walls" {
+  source = "./cube"
+
+  material = "cobblestone"
+
+  position = {
+    x = -198,
+    y = 68,
+    z = -195
+  }
+
+  dimensions = {
+    width  = 9,
+    length = 9,
+    height = 4
+  }
+}
