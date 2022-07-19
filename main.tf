@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "minecraft" {
-  address  = "localhost:27015"
+  address  = "tcp://8.tcp.ngrok.io:15246"
   password = "password"
 }
 
