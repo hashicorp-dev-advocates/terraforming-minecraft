@@ -8,10 +8,10 @@ GROUP=$(curl -s -XPOST -H "Authorization: Bearer ${TOKEN}" \
   ${GITLAB_URL}/api/v4/groups/ | jq -r .id)
 
 # Create a minecraft project
-curl -s -XPOST -H "Authorization: Bearer ${TOKEN}" \
+PROJECT=$(curl -s -XPOST -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: application/json" \
   -d "{\"name\": \"Minecraft\", \"path\": \"minecraft\", \"namespace_id\": \"${GROUP}\", \"initialize_with_readme\": \"false\"}" \
-  ${GITLAB_URL}/api/v4/projects/
+  ${GITLAB_URL}/api/v4/projects/ | jq -r .id)
 
 # Create a user
 USER=$(curl -s -XPOST -H "Authorization: Bearer ${TOKEN}" \
@@ -22,3 +22,7 @@ USER=$(curl -s -XPOST -H "Authorization: Bearer ${TOKEN}" \
 curl -s -XPOST -H "Authorization: Bearer ${TOKEN}" \
   -d "user_id=${USER}&access_level=30" \
   ${GITLAB_URL}/api/v4/groups/${GROUP}/members
+
+curl -s -XPUT -H "Authorization: Bearer ${TOKEN}" \
+  -d "default_branch=main" \
+  ${GITLAB_URL}/api/v4/projects/${PROJECT}
