@@ -49,7 +49,7 @@ container "gitlab" {
 
   health_check {
     timeout = "300s"
-    http    = "http://${var.gitlab_url}/users/sign_in"
+    http    = "${var.gitlab_url}/users/sign_in"
   }
 }
 
@@ -69,4 +69,8 @@ exec_local "setup" {
   }
 
   timeout = "60s"
+}
+
+output "gitlab" {
+  value = var.gitlab_url
 }

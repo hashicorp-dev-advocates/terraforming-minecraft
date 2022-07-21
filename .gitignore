@@ -1,2 +1,5 @@
 .terraform*
 *.tfstate*
+.envrc
+cloud.shipyardvars
+minecraft

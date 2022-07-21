@@ -4,6 +4,26 @@ This is an example of how to write Terraform code and use a Git workflow to mana
 
 In this example we use the Minecraft Terraform provider to give a visual representation of what Terraform does in the background.
 
+## Prerequisites
+
+- shipyard
+- ngrok
+- docker
+
+## Demo setup
+
+Start ngrok in order to forward traffic to GitLab. In a new terminal window, run:
+
+```shell
+make ngrok
+```
+
+Create a Minecraft server and GitLab instance and configure them.
+
+```shell
+make shipyard
+```
+
 ## Revert commit
 
 An easy way to revert to a previous commit:
