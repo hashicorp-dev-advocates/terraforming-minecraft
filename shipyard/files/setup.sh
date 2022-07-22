@@ -10,7 +10,7 @@ GROUP=$(curl -s -XPOST -H "Authorization: Bearer ${TOKEN}" \
 # Create a minecraft project
 PROJECT=$(curl -s -XPOST -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: application/json" \
-  -d "{\"name\": \"Minecraft\", \"path\": \"minecraft\", \"namespace_id\": \"${GROUP}\", \"initialize_with_readme\": \"false\"}" \
+  -d "{\"name\": \"Minecraft\", \"path\": \"minecraft\", \"namespace_id\": \"${GROUP}\", \"initialize_with_readme\": \"true\"}" \
   ${GITLAB_URL}/api/v4/projects/ | jq -r .id)
 
 # Create a user

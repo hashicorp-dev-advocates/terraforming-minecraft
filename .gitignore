@@ -1,5 +1,7 @@
 .terraform*
 *.tfstate*
 .envrc
+.vscode
 cloud.shipyardvars
 minecraft
+assets

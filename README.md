@@ -24,6 +24,13 @@ Create a Minecraft server and GitLab instance and configure them.
 make shipyard
 ```
 
+Take the url that the previous command outputs and use it to close the minecraft repository.
+
+```shell
+eval $(shipyard env)
+git clone $gitlab/demo/minecraft.git
+```
+
 ## Revert commit
 
 An easy way to revert to a previous commit:
