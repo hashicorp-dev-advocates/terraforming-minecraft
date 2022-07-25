@@ -54,30 +54,10 @@ container "gitlab" {
     value = var.gitlab_password
   }
 
-  // env {
-  //   key = "EXTERNAL_URL"
-  //   value = var.gitlab_url
-  // }
-
-  // env {
-  //   key = "GITLAB_HOST"
-  //   value = var.gitlab_host
-  // }
-
-  // env {
-  //   key = "GITLAB_PASSWORD"
-  //   value = var.gitlab_password
-  // }
-
   env {
     key = "GITLAB_OMNIBUS_CONFIG"
     value = "external_url '${var.gitlab_url}'; gitlab_rails['gitlab_host'] = '${var.gitlab_host}';"
   }
-
-  // volume {
-  //   source = "${data("gitlab")}/gitlab.rb"
-  //   destination = "/etc/gitlab/gitlab.rb"
-  // }
 
   health_check {
     timeout = "300s"
