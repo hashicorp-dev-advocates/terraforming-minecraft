@@ -46,7 +46,7 @@ container "gitlab" {
   port {
     local  = 22
     remote = 22
-    host   = 22
+    host   = 2222
   }
 
   env {
