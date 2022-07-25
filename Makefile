@@ -10,11 +10,11 @@ cleanup:
 
 shipyard:
 	@curl -s http://localhost:4040/api/tunnels | jq -r '.tunnels[] | select(.name == "gitlab (http)") | .public_url' | awk '{ print "gitlab_url=\""$$0"\"\ngitlab_host=\""$$0"\""}' > cloud.shipyardvars
-	@ run shipyard --vars-file=cloud.shipyardvars
+	@shipyard run shipyard --vars-file=cloud.shipyardvars
 	@shipyard output gitlab
 
 remote:
-	@ run shipyard --vars-file=remote.shipyardvars
+	@shipyard run shipyard --vars-file=remote.shipyardvars
 	@shipyard output gitlab
 
 info:
