@@ -13,5 +13,9 @@ shipyard:
 	@ run shipyard --vars-file=cloud.shipyardvars
 	@shipyard output gitlab
 
+remote:
+	@ run shipyard --vars-file=remote.shipyardvars
+	@shipyard output gitlab
+
 info:
 	@curl -s http://localhost:4040/api/tunnels | jq -r '.tunnels[] | select(.name == "rcon") | .public_url' | sed 's/tcp:\/\///g'
